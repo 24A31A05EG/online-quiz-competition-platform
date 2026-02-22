@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Result</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="result">
+    <h2 id="resultLabel">Quiz completed!</h2>
+    <p id="score"></p>
+    <div id="resultButtons">
+      <button id="restartBtn">Restart Quiz</button>
+      <button id="leaderboardBtn">View Leaderboard</button>
+      <button id="homeBtn">Go to Home</button>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function() {
+      const score = localStorage.getItem("quizScore");
+      const total = localStorage.getItem("totalQuestions");
+      const username = localStorage.getItem("currentUser") || "Anonymous";
+
+      // Display score
+      document.getElementById("score").innerText = `Your Final Score: ${score} / ${total}`;
+
+      // Save score to leaderboard
+      let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+      leaderboard.push({ name: username, score: score, total: total });
+
+      // Sort leaderboard by score (highest first)
+      leaderboard.sort((a, b) => b.score - a.score);
+
+      // Save back to localStorage
+      localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+    };
+
+    // Restart button logic
+    document.getElementById("restartBtn").onclick = function() {
+      localStorage.removeItem("quizScore");
+      localStorage.removeItem("totalQuestions");
+      window.location.href = "quiz.html";
+    };
+
+    // Leaderboard button logic
+    document.getElementById("leaderboardBtn").onclick = function() {
+      window.location.href = "leaderboard.html";
+    };
+
+    // Go to Home button logic
+    document.getElementById("homeBtn").onclick = function() {
+      window.location.href = "home.html";
+    };
+     document.getElementById("clearLeaderboardBtn").onclick = function() {
+    localStorage.removeItem("leaderboard"); // ✅ clears leaderboard data
+    window.location.reload(); // refresh page to show empty table
+     };
+  </script>
+</body>
+</html>

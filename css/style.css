@@ -176,3 +176,365 @@ body {
     margin-top: 10px;
     color: red;
 }
+/* Quiz container */
+#quiz {
+  max-width: 700px;
+  margin: 100px auto;       /* center horizontally with spacing from top */
+  padding: 30px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  text-align: center;       /* center text inside */
+}
+
+/* Question text */
+#question {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Options grid: 2 per row */
+#options {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two columns */
+  gap: 15px;                      /* spacing between buttons */
+  justify-items: center;           /* center buttons in each cell */
+  margin-bottom: 20px;
+}
+
+/* Option buttons */
+.option-btn {
+  width: 90%;                     /* make buttons consistent width */
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #ccc;
+  color: black;
+  text-align: left;               /* keep A) B) labels aligned left */
+  border-radius: 6px;
+}
+
+/* Keep disabled buttons static */
+.option-btn:disabled {
+  cursor: not-allowed;
+  opacity: 1 !important;
+  background-color: white !important;
+  color: black !important;
+}
+
+/* Result message */
+#options p {
+  grid-column: span 2;            /* make result/explanation span full width */
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Navigation buttons */
+#navigation {
+  margin-top: 20px;
+}
+
+#navigation button {
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* Timer styling (already working fine) */
+#timer {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff; /* white so it contrasts with your blue gradient */
+}
+/* Result message styling */
+.result-message {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* Specific colors with better contrast */
+.result-correct {
+  background-color: #28a745; /* bright green background */
+  color: white;              /* white text for contrast */
+}
+
+.result-wrong {
+  background-color: #dc3545; /* bright red background */
+  color: white;              /* white text for contrast */
+}
+
+/* Explanation text */
+.explanation {
+  margin-top: 8px;
+  font-style: italic;
+  color: #f0f0f0; /* light gray for readability on blue */
+}
+/* Result page container */
+#result {
+  max-width: 500px;
+  margin: 120px auto;
+  padding: 30px;
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+}
+
+/* Result label */
+#resultLabel {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+/* Score text */
+#score {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+/* Buttons container */
+#resultButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Buttons styling */
+#restartBtn, #leaderboardBtn {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: #00c6ff;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 12px #00c6ff;
+}
+
+#restartBtn:hover, #leaderboardBtn:hover {
+  background: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 18px white;
+}
+/* Leaderboard container */
+#leaderboard {
+  max-width: 700px;
+  margin: 100px auto;
+  padding: 30px;
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+}
+
+/* Title */
+#leaderboard h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Table styling */
+#leaderboardTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+}
+
+#leaderboardTable th, 
+#leaderboardTable td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+}
+
+#leaderboardTable th {
+  background: #00c6ff;
+  color: black;
+  font-weight: bold;
+}
+
+#leaderboardTable tr:nth-child(even) {
+  background: rgba(255,255,255,0.05);
+}
+
+/* Badge column styling */
+#leaderboardTable td:last-child {
+  font-size: 22px;
+}
+
+/* Home button */
+#homeBtn {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: #00c6ff;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 12px #00c6ff;
+}
+
+#homeBtn:hover {
+  background: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 18px white;
+}
+#home {
+  max-width: 700px;
+  margin: 100px auto;
+  padding: 30px;
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+}
+
+#home h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+
+#welcomeMsg {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #00c6ff;
+  text-shadow: 0 0 8px #00c6ff;
+}
+
+#categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.categoryBtn {
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: #00c6ff;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 12px #00c6ff;
+}
+
+.categoryBtn:hover {
+  background: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 18px white;
+}
+
+.categoryBtn.selected {
+  background: #ffcc00;   /* gold highlight */
+  color: black;
+  box-shadow: 0 0 15px #ffcc00;
+  transform: scale(1.1);
+}
+
+#startBtn {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: #00c6ff;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 12px #00c6ff;
+}
+
+#startBtn:disabled {
+  background: gray;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+#startBtn:hover:enabled {
+  background: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 18px white;
+}
+#logoutBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background: #ff4444;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #ff4444;
+}
+
+#logoutBtn:hover {
+  background: white;
+  color: #ff4444;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff4444;
+}
+#clearLeaderboardBtn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: #ff4444;   /* red destructive button */
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 12px #ff4444;
+}
+
+#clearLeaderboardBtn:hover {
+  background: white;
+  color: #ff4444;
+  transform: scale(1.05);
+  box-shadow: 0 0 18px #ff4444;
+}
+#leaderboardTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#leaderboardTable th, #leaderboardTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+#leaderboardTable th {
+  background-color: #00c6ff;
+  color: black;
+}
+
+#leaderboardTable td:nth-child(2) {
+  font-size: 22px; /* make badge bigger */
+}
+
